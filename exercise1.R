@@ -15,12 +15,16 @@ d <- diamonds[sample(nrow(diamonds), 1000), ]
 # cut: color 
 
 # Pass your plot to the layout function to add a descriptive title
-
+plot_ly(d, x = carat, y = price, color = cut, mode = "markers") %>% 
+   layout(title = "Cut vs. Price")
 
 # Create another graph that compares diamond table to diamond depth, 
 # that also encodes information about price
-
+plot_ly(d, x = depth, y = price, mode = "markers", size = price, color = price)
 # Pass your plot to the layout function to add a descriptive title
 
+
+
+plot_ly(d, x=depth, y=price, z=clarity, color=color, type="scatter3d", mode="markers")
 
 
